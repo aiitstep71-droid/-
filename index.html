@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sm-app">
+      <header class="sm-header">
+        <nav class="sm-nav" aria-label="Навигация">
+          <h1 class="sm-title">Student Manager</h1>
+        </nav>
+      </header>
+
+      <main class="sm-main">
+        <section class="sm-panel sm-panel-form" aria-label="Форма студента">
+          <h2 class="sm-section-title">Добавить студента</h2>
+
+          <form id="student-form" class="sm-form" novalidate>
+            <div class="sm-field-group">
+              <label for="student-name">Имя</label>
+              <input
+                id="student-name"
+                name="studentName"
+                type="text"
+                placeholder="Введите имя студента"
+                required
+              />
+            </div>
+
+            <div class="sm-field-group">
+              <label for="student-course">Курс</label>
+              <input
+                id="student-course"
+                name="studentCourse"
+                type="number"
+                min="1"
+                max="6"
+                placeholder="Введите курс"
+                required
+              />
+            </div>
+
+            <div class="sm-field-group">
+              <label for="student-group">Группа</label>
+              <input
+                id="student-group"
+                name="studentGroup"
+                type="text"
+                placeholder="Введите номер группы"
+                required
+              />
+            </div>
+
+            <div class="sm-field-group">
+              <label for="student-email">Email</label>
+              <input
+                id="student-email"
+                name="studentEmail"
+                type="email"
+                placeholder="Введите email"
+                required
+              />
+            </div>
+
+            <div class="sm-button-group">
+              <button class="sm-button sm-button-primary" type="submit">Сохранить</button>
+              <button class="sm-button sm-button-secondary" id="reset-button" type="button">
+                Очистить
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="sm-panel sm-panel-table" aria-label="Список студентов">
+          <div class="sm-table-header">
+            <h2 class="sm-section-title">Список студентов</h2>
+            <span id="students-count" class="sm-count">0</span>
+          </div>
+
+          <div class="sm-table-wrapper">
+            <table class="sm-table">
+              <thead>
+                <tr>
+                  <th>Имя</th>
+                  <th>Курс</th>
+                  <th>Группа</th>
+                  <th>Email</th>
+                  <th>Действия</th>
+                </tr>
+              </thead>
+              <tbody id="student-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="sm-footer">
+        <p>© 2026 Student Manager</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
